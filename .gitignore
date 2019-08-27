@@ -1,0 +1,10 @@
+.DS_Store
+.vscode
+*.pyc
+db.sqlite3
+terraform.tfvars
+terraform.tfstate
+.terraform
+terraform.tfstate.backup
+.env
+.envs
