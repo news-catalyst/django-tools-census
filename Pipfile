@@ -16,6 +16,8 @@ gunicorn = "*"
 whitenoise = "*"
 django-environ = "*"
 django-heroku = "*"
+celery = "*"
+redis = "*"
 
 [requires]
 python_version = "3.7"
