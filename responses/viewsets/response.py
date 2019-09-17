@@ -1,7 +1,7 @@
 from responses.conf import settings
 from responses.models import Response
 from responses.serializers import ResponseSerializer
-from responses.tasks import add_survey_response
+from responses.tasks import add_survey_response, publish_survey_data
 from responses.utils.importers import import_class
 from rest_framework.views import APIView
 from rest_framework.response import Response as RestResponse
@@ -21,4 +21,5 @@ class ResponseViewSet(APIView):
 
     def post(self, request):
         add_survey_response.delay(request.data)
+        publish_survey_data.delay()
         return RestResponse(200)

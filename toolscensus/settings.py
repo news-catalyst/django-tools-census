@@ -125,6 +125,11 @@ CORS_ORIGIN_WHITELIST = [
     "https://newscatalyst.org",
 ]
 
+RESPONSES_AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+RESPONSES_AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+RESPONSES_AWS_REGION = env('AWS_REGION')
+RESPONSES_AWS_S3_BUCKET = env('AWS_S3_BUCKET')
+
 django_heroku.settings(locals())
 
 del DATABASES['default']['OPTIONS']['sslmode']

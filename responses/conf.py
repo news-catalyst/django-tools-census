@@ -10,6 +10,20 @@ class Settings:
     pass
 
 
+Settings.AWS_ACCESS_KEY_ID = getattr(
+    project_settings, "RESPONSES_AWS_ACCESS_KEY_ID", None
+)
+
+Settings.AWS_SECRET_ACCESS_KEY = getattr(
+    project_settings, "RESPONSES_AWS_SECRET_ACCESS_KEY", None
+)
+
+Settings.AWS_REGION = getattr(project_settings, "RESPONSES_AWS_REGION", None)
+
+Settings.AWS_S3_BUCKET = getattr(
+    project_settings, "RESPONSES_AWS_S3_BUCKET", None
+)
+
 Settings.AUTH_DECORATOR = getattr(
     project_settings,
     "RESPONSES_AUTH_DECORATOR",
