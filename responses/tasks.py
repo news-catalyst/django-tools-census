@@ -106,15 +106,15 @@ def publish_survey_data():
         "task_counts": task_counts
     }
 
-    with open('data.json', 'w') as f:
-        json.dump(data, f, cls=DjangoJSONEncoder)
+    # with open('data.json', 'w') as f:
+    #     json.dump(data, f, cls=DjangoJSONEncoder)
 
-    # key = "news-tools-census/responses/data.json"
-    # bucket = get_bucket()
-    # bucket.put_object(
-    #     Key=key,
-    #     ACL=defaults.ACL,
-    #     Body=json.dumps(data),
-    #     CacheControl=defaults.CACHE_HEADER,
-    #     ContentType="application/json",
-    # )
+    key = "responses/data.json"
+    bucket = get_bucket()
+    bucket.put_object(
+        Key=key,
+        ACL=defaults.ACL,
+        Body=json.dumps(data, cls=DjangoJSONEncoder),
+        CacheControl=defaults.CACHE_HEADER,
+        ContentType="application/json",
+    )
