@@ -28,3 +28,9 @@ class Response(models.Model):
     org_sustainability = models.CharField(max_length=100)
     talk_more = models.BooleanField(default=False)
     email = models.EmailField(null=True, blank=True)
+
+    def __str__(self):
+        return "{} {}".format(
+            self.date_submitted.strftime('%Y-%m-%d %H:%M'),
+            self.job_title
+        )
